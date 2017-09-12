@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block styles %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{%  static 'reserva/css/altaEscenario.css'%}">
+<script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
+<link rel="stylesheet" href="static/reserva/css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+{% endblock styles %}
+
+
+
+{% block title %}|agregarPresentacion{% endblock %}
+
+{% block content %}
+
+<div class="container" id="formEscenario">
+    <div class="row">
+
+        <div class="col-sm-12 ">
+
+
+            <h4 class="lead">Agregar Presentacion de Escenario</h4>
+            <hr class="my-4">
+            <form role="form" method="POST" action="" enctype="multipart/form-data" >{% csrf_token %}
+
+                {{ form.presentacion.label_tag}} {{form.presentacion.as_widget}}<span id="al1"></span><br>
+
+                {{ form.escenario.label_tag}} {{ form.escenario.as_widget }}<span id="al2"></span><br>
+
+
+
+                <button type="submit" class="btn btn-primary btn-lg"> Agregar presentacion a escenario</button>
+
+
+
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+{% endblock content %}

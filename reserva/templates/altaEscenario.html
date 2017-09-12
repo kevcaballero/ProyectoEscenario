@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block styles %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{%  static 'reserva/css/altaEscenario.css'%}">
+<script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+{% endblock styles %}
+
+
+
+{% block title %}|agregarEscenario{% endblock %}
+
+{% block content %}
+
+<div class="container" id="formEscenario">
+    <div class="row">
+
+        <div class="col-sm-12 ">
+
+
+            <h4 class="lead">Agregar Escenario</h4>
+            <hr class="my-4">
+            <form  role="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                {{ form.nombre_escenario.label_tag}} {{ form.nombre_escenario }}<span id="al1"></span><br>
+
+                {{ form.tipo_escenario.label_tag}} {{ form.tipo_escenario }}<span id="al2"></span><br>
+
+                {{ form.ubicacion.label_tag}} {{ form.ubicacion }}<span id="al3"></span><br>
+
+               {{ form.imagen.label_tag}} {{ form.imagen }}<span id="al4"></span><br>
+
+                {{ form.estado.label_tag}} {{ form.estado }}<span ></span><br>
+
+                <button type="submit" class="btn btn-primary">Guardar escenario</button>
+
+
+
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+{%  endblock content %}

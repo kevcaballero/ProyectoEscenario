@@ -1,0 +1,44 @@
+
+
+
+#scroll{
+    overflow-y: scroll;
+    height:400px;
+    color: cyan;
+}
+div#tab {
+    margin-top: 50px;
+
+}
+.validate{
+    margin-bottom: 100px;
+}
+
+div.card{
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+h4.lead{
+    margin-top: 30px;
+}
+
+#mostrarForm{
+    margin-top: 60px;
+}
+.card input {
+  display: none;
+}
+.card  {
+  width: 100px;
+  border: 5px solid transparent;
+}
+
+
+div#content-tab1{
+    margin-bottom: 100px;
+}
+.obtenerFecha{
+    margin:20px;
+}
+

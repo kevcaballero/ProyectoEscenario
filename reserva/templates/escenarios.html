@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block styles %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{%  static 'reserva/css/eventoProgramado.css'%}">
+<script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'reserva/jquery/jquery.datetimepicker.full.js'%}"></script>
+<link rel="stylesheet" href="{% static 'reserva/css/jquery.datetimepicker.min.css'%}">
+<link rel="stylesheet" href="static/reserva/css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+{% endblock styles %}
+
+
+
+{% block title %}|Escenarios{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- mostramos los mensajes flash -->
+        {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="jumbotron ">
+
+            {% if lista_escenarios|length > 0 %}
+            <h4 class="lead">Escenarios</h4>
+            <hr class="my-4">
+            {% for Escenario in lista_escenarios %}
+            <div class="col col-md-12" >
+                <div class="container">
+                    <div class="row">
+                        <div class=" col ">
+                            <div class="card w-50" style="width: 20rem;">
+                                <img class="card-img-top" src="{{ Escenario.imagen.url }} " alt="Card image ">
+                                <div class="card-block">
+
+                                    <h4 class="card-title">{{ Escenario.nombre_escenario}}</h4>
+
+
+
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                        </div>
+
+
+                        <div class="col ">
+                            <a href="{% url 'reserva:actualizarEscenario' Escenario.id %}" class="btn btn-success">Actualizar escenario</a>
+                            <a href="{% url 'reserva:eliminarEscenario' Escenario.id %}" class="btn btn-danger">Eliminar escenario</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No hay escenarios</p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

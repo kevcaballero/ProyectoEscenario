@@ -1,0 +1,23 @@
+h4.lead{
+    margin-top: 30px;
+    text-align: center;
+}
+label#remember{
+    color: black;
+    margin-right: 140px;
+}
+button.btn{
+    background-color: steelblue;
+    color:white;
+    align-content: center;
+
+}
+div.form-group{
+    margin-top: 20px;
+}
+i.fa{
+    margin-right: 5px;
+}
+.navbar-inverse .navbar-brand .navbar-toggler{
+    color: black;
+}

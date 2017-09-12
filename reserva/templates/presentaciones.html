@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block styles %}
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{%  static 'reserva/css/eventoProgramado.css'%}">
+<script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'reserva/jquery/jquery.datetimepicker.full.js'%}"></script>
+<link rel="stylesheet" href="{% static 'reserva/css/jquery.datetimepicker.min.css'%}">
+<link rel="stylesheet" href="static/reserva/css/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+{% endblock styles %}
+
+
+
+{% block title %}|Presentaciones{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- mostramos los mensajes flash -->
+        {% if messages %}
+        <div class="alert alert-success">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        <div class="jumbotron ">
+
+            {% if lista_presentaciones|length > 0 %}
+            <h4 class="lead">Presentaciones</h4>
+            <hr class="my-4">
+            {% for ImgEscenario in lista_presentaciones %}
+            <div class="col col-md-12" >
+                <div class="container">
+                    <div class="row">
+                        <div class=" col ">
+                            <div class="jumbotron">
+                                    <h1 class="display-4">{{ ImgEscenario.escenario}}</h1>
+
+                                    <p class="lead">
+
+                                        <img src="{{ ImgEscenario.presentacion.url}}">
+
+                                    </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col ">
+                            <a href="{% url 'reserva:actualizarPresentacion' ImgEscenario.id %}" class="btn btn-success">Actualizar presentacion</a>
+                            <a href="{% url 'reserva:eliminarPresentacion' ImgEscenario.id %}" class="btn btn-danger">Eliminar presentacion</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No hay presentaciones disponibles</p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+{% endblock content %}

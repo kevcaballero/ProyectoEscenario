@@ -1,0 +1,234 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+0001_initial.py	../reserva/migrations/0001_initial.py	1;"	kind:file	line:1
+ALLOWED_HOSTS	../ReservaEscenario/settings.py	/^ALLOWED_HOSTS = []$/;"	kind:variable	line:27
+AUTHENTICATION_BACKENDS	../ReservaEscenario/settings.py	/^AUTHENTICATION_BACKENDS = ($/;"	kind:variable	line:119
+AUTH_PASSWORD_VALIDATORS	../ReservaEscenario/settings.py	/^AUTH_PASSWORD_VALIDATORS = [$/;"	kind:variable	line:91
+AbstractBaseUser	../user/models.py	/^from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin$/;"	kind:namespace	line:2
+Academico	../reserva/models.py	/^    Academico='A'$/;"	kind:variable	line:44
+AppConfig	../reserva/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+AppConfig	../user/apps.py	/^from django.apps import AppConfig$/;"	kind:namespace	line:1
+BASE_DIR	../ReservaEscenario/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	kind:variable	line:16
+BaseUserManager	../user/models.py	/^from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin$/;"	kind:namespace	line:2
+Capacitacion	../reserva/models.py	/^    Capacitacion='CAP'$/;"	kind:variable	line:49
+Civico	../reserva/models.py	/^    Civico='C'$/;"	kind:variable	line:47
+Comentario	../reserva/forms.py	/^from .models import  Comentario$/;"	kind:namespace	line:4
+Comentario	../reserva/models.py	/^class Comentario(models.Model):$/;"	kind:class	line:102
+CreateView	../reserva/views.py	/^from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView$/;"	kind:namespace	line:3
+Cultural	../reserva/models.py	/^    Cultural='CRA'$/;"	kind:variable	line:46
+DATABASES	../ReservaEscenario/settings.py	/^DATABASES = {$/;"	kind:variable	line:76
+DEBUG	../ReservaEscenario/settings.py	/^DEBUG = True$/;"	kind:variable	line:25
+DISPONIBILIDAD_EQUIPO	../reserva/models.py	/^    DISPONIBILIDAD_EQUIPO = ($/;"	kind:variable	line:81
+DeleteView	../reserva/views.py	/^from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView$/;"	kind:namespace	line:3
+Deportivo	../reserva/models.py	/^    Deportivo='D'$/;"	kind:variable	line:45
+DetailView	../reserva/views.py	/^from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView$/;"	kind:namespace	line:3
+ESTADO_ESCENARIO	../reserva/models.py	/^    ESTADO_ESCENARIO = ($/;"	kind:variable	line:17
+Escenario	../reserva/admin.py	/^from .models import Escenario$/;"	kind:namespace	line:2
+Escenario	../reserva/forms.py	/^from .models import Escenario$/;"	kind:namespace	line:6
+Escenario	../reserva/models.py	/^class Escenario(models.Model):$/;"	kind:class	line:5
+Escenario	../reserva/views.py	/^from .models import Escenario$/;"	kind:namespace	line:6
+Evento	../reserva/forms.py	/^from .models import Evento$/;"	kind:namespace	line:3
+Evento	../reserva/models.py	/^class Evento(models.Model):$/;"	kind:class	line:42
+Evento	../reserva/views.py	/^from .models import Evento$/;"	kind:namespace	line:7
+FormView	../reserva/views.py	/^from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView$/;"	kind:namespace	line:3
+HttpResponseRedirect	../reserva/views.py	/^from django.shortcuts import render_to_response,get_object_or_404, render,HttpResponseRedirect$/;"	kind:namespace	line:1
+INSTALLED_APPS	../ReservaEscenario/settings.py	/^INSTALLED_APPS = [$/;"	kind:variable	line:31
+ImgEscenario	../reserva/admin.py	/^from .models import ImgEscenario$/;"	kind:namespace	line:4
+ImgEscenario	../reserva/forms.py	/^from .models import ImgEscenario$/;"	kind:namespace	line:5
+ImgEscenario	../reserva/models.py	/^class ImgEscenario(models.Model):$/;"	kind:class	line:35
+ImgEscenario	../reserva/views.py	/^from .models import  ImgEscenario$/;"	kind:namespace	line:11
+LANGUAGE_CODE	../ReservaEscenario/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	kind:variable	line:109
+MEDIA_ROOT	../ReservaEscenario/settings.py	/^MEDIA_ROOT=os.path.join(BASE_DIR, 'media')$/;"	kind:variable	line:129
+MEDIA_URL	../ReservaEscenario/settings.py	/^MEDIA_URL='\/media\/'$/;"	kind:variable	line:130
+MIDDLEWARE	../ReservaEscenario/settings.py	/^MIDDLEWARE = [$/;"	kind:variable	line:43
+Meta	../reserva/forms.py	/^    class Meta:$/;"	kind:class	line:111
+Meta	../reserva/forms.py	/^    class Meta:$/;"	kind:class	line:130
+Meta	../reserva/forms.py	/^    class Meta:$/;"	kind:class	line:20
+Meta	../reserva/forms.py	/^    class Meta:$/;"	kind:class	line:40
+Migration	../reserva/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	kind:class	line:9
+ModelForm	../reserva/forms.py	/^from django.forms import  ModelForm$/;"	kind:namespace	line:2
+PermissionsMixin	../user/models.py	/^from django.contrib.auth.models import AbstractBaseUser, BaseUserManager,PermissionsMixin$/;"	kind:namespace	line:2
+ROOT_URLCONF	../ReservaEscenario/settings.py	/^ROOT_URLCONF = 'ReservaEscenario.urls'$/;"	kind:variable	line:53
+Recreativo	../reserva/models.py	/^    Recreativo= 'R'$/;"	kind:variable	line:48
+Recurso	../reserva/models.py	/^class Recurso(models.Model):$/;"	kind:class	line:80
+ReservaConfig	../reserva/apps.py	/^class ReservaConfig(AppConfig):$/;"	kind:class	line:4
+SECRET_KEY	../ReservaEscenario/settings.py	/^SECRET_KEY = 'n+zx1%+b3c3vg*^ggs8t4dhrwzw&f+ks1s)$n_3z2(3d%gi81c'$/;"	kind:variable	line:22
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY	../ReservaEscenario/settings.py	/^SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ""$/;"	kind:variable	line:125
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET	../ReservaEscenario/settings.py	/^SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ""$/;"	kind:variable	line:126
+STATICFILES_DIRS	../ReservaEscenario/settings.py	/^STATICFILES_DIRS =[$/;"	kind:variable	line:131
+STATIC_URL	../ReservaEscenario/settings.py	/^STATIC_URL='\/static\/'$/;"	kind:variable	line:128
+Selecciona	../reserva/models.py	/^    Selecciona=''$/;"	kind:variable	line:43
+TEMPLATES	../ReservaEscenario/settings.py	/^TEMPLATES = [$/;"	kind:variable	line:55
+TIME_ZONE	../ReservaEscenario/settings.py	/^TIME_ZONE = 'UTC'$/;"	kind:variable	line:111
+TIPO_EQUIPO	../reserva/models.py	/^    TIPO_EQUIPO = ($/;"	kind:variable	line:86
+TIPO_EQUIPOAUDIO	../reserva/models.py	/^    TIPO_EQUIPOAUDIO = ($/;"	kind:variable	line:91
+TIPO_ESCENARIO	../reserva/models.py	/^    TIPO_ESCENARIO = ($/;"	kind:variable	line:7
+TIPO_EVENTO	../reserva/models.py	/^    TIPO_EVENTO = ($/;"	kind:variable	line:51
+TemplateView	../reserva/views.py	/^from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView$/;"	kind:namespace	line:3
+TestCase	../reserva/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+TestCase	../user/tests.py	/^from django.test import TestCase$/;"	kind:namespace	line:1
+USE_I18N	../ReservaEscenario/settings.py	/^USE_I18N = True$/;"	kind:variable	line:113
+USE_L10N	../ReservaEscenario/settings.py	/^USE_L10N = True$/;"	kind:variable	line:115
+USE_TZ	../ReservaEscenario/settings.py	/^USE_TZ = False$/;"	kind:variable	line:117
+UpdateView	../reserva/views.py	/^from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView$/;"	kind:namespace	line:3
+UserConfig	../user/apps.py	/^class UserConfig(AppConfig):$/;"	kind:class	line:4
+WSGI_APPLICATION	../ReservaEscenario/settings.py	/^WSGI_APPLICATION = 'ReservaEscenario.wsgi.application'$/;"	kind:variable	line:71
+_	../reserva/forms.py	/^from django.utils.translation import ugettext_lazy as _$/;"	kind:namespace	line:7
+__init__.py	../ReservaEscenario/__init__.py	1;"	kind:file	line:1
+__init__.py	../reserva/__init__.py	1;"	kind:file	line:1
+__init__.py	../reserva/migrations/__init__.py	1;"	kind:file	line:1
+__init__.py	../user/__init__.py	1;"	kind:file	line:1
+__init__.py	../user/migrations/__init__.py	1;"	kind:file	line:1
+__str__	../reserva/models.py	/^    def __str__(self):$/;"	kind:member	line:31
+__unicode__	../reserva/models.py	/^    def __unicode__(self):$/;"	kind:member	line:39
+__unicode__	../reserva/models.py	/^    def __unicode__(self):$/;"	kind:member	line:76
+_unicode_	../reserva/models.py	/^        def _unicode_(self):$/;"	kind:member	line:107
+actualizarEscenario	../reserva/views.py	/^def actualizarEscenario(request, idescenario):$/;"	kind:function	line:45
+actualizarPresentacion	../reserva/views.py	/^def actualizarPresentacion(request, idimg):$/;"	kind:function	line:80
+admin	../ReservaEscenario/urls.py	/^from django.contrib import admin$/;"	kind:namespace	line:17
+admin	../reserva/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin	../user/admin.py	/^from django.contrib import admin$/;"	kind:namespace	line:1
+admin.py	../reserva/admin.py	1;"	kind:file	line:1
+admin.py	../user/admin.py	1;"	kind:file	line:1
+administrar	../reserva/views.py	/^def administrar(request):$/;"	kind:function	line:196
+agregarEscenario	../reserva/views.py	/^def agregarEscenario(request):$/;"	kind:function	line:32
+agregarPresentacion	../reserva/views.py	/^def agregarPresentacion(request):$/;"	kind:function	line:67
+application	../ReservaEscenario/wsgi.py	/^application = get_wsgi_application()$/;"	kind:variable	line:16
+apps.py	../reserva/apps.py	1;"	kind:file	line:1
+apps.py	../user/apps.py	1;"	kind:file	line:1
+capacidad_evento	../reserva/models.py	/^    capacidad_evento =models.IntegerField(null=True)$/;"	kind:variable	line:63
+clean_capacidad_evento	../reserva/forms.py	/^        def clean_capacidad_evento(self):$/;"	kind:member	line:101
+clean_capacidad_evento	../reserva/forms.py	/^        def clean_capacidad_evento(self):$/;"	kind:member	line:93
+clean_nombre_evento	../reserva/forms.py	/^        def clean_nombre_evento(self):$/;"	kind:member	line:76
+clean_nombre_evento	../reserva/forms.py	/^        def clean_nombre_evento(self):$/;"	kind:member	line:84
+confirmarEvento	../reserva/views.py	/^def confirmarEvento(request):$/;"	kind:function	line:147
+contenido	../reserva/models.py	/^        contenido= models.TextField()$/;"	kind:variable	line:105
+datosComentario	../reserva/forms.py	/^class datosComentario(forms.ModelForm):$/;"	kind:class	line:129
+datosComentario	../reserva/views.py	/^from .forms import datosComentario$/;"	kind:namespace	line:9
+datosEscenario	../reserva/forms.py	/^class datosEscenario(forms.ModelForm):$/;"	kind:class	line:19
+datosEscenario	../reserva/views.py	/^from .forms import datosEscenario$/;"	kind:namespace	line:10
+datosEvento	../reserva/forms.py	/^class datosEvento(forms.ModelForm):$/;"	kind:class	line:39
+datosEvento	../reserva/views.py	/^from .forms import datosEvento$/;"	kind:namespace	line:8
+db	../reserva/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+deletion	../reserva/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+dependencies	../reserva/migrations/0001_initial.py	/^    dependencies = [$/;"	kind:variable	line:13
+disponibilidad_equipo	../reserva/models.py	/^    disponibilidad_equipo =models.CharField(max_length=1,choices=DISPONIBILIDAD_EQUIPO, default='Default Value')$/;"	kind:variable	line:96
+django	../manage.py	/^            import django$/;"	kind:namespace	line:14
+django	../reserva/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+eliminarEscenario	../reserva/views.py	/^def eliminarEscenario(request,idescenario):$/;"	kind:function	line:58
+eliminarPresentacion	../reserva/views.py	/^def eliminarPresentacion(request,idimg):$/;"	kind:function	line:93
+escenario	../reserva/models.py	/^    escenario = models.ForeignKey(Escenario)$/;"	kind:variable	line:37
+escenario	../reserva/models.py	/^    escenario= models.ForeignKey(Escenario)$/;"	kind:variable	line:71
+estado	../reserva/models.py	/^    estado=models.CharField(max_length=1, choices=ESTADO_ESCENARIO, default='Default Value')$/;"	kind:variable	line:27
+evento	../reserva/models.py	/^        evento =models.ForeignKey(Evento)$/;"	kind:variable	line:104
+execute_from_command_line	../manage.py	/^        from django.core.management import execute_from_command_line$/;"	kind:namespace	line:8
+fecha	../reserva/models.py	/^    fecha=models.DateField()$/;"	kind:variable	line:66
+field	../reserva/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='reserva.Evento'),$/;"	kind:variable	line:75
+field	../reserva/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='reserva.ImgEscenario'),$/;"	kind:variable	line:70
+fields	../reserva/forms.py	/^        fields = ['nombre_escenario','tipo_escenario','ubicacion','imagen','estado']$/;"	kind:variable	line:22
+fields	../reserva/forms.py	/^        fields =['contenido']$/;"	kind:variable	line:132
+fields	../reserva/forms.py	/^        fields =['presentacion','escenario']$/;"	kind:variable	line:113
+fields	../reserva/forms.py	/^        fields=['nombre_evento','capacidad_evento','tipo_evento', 'objetivo','fecha','hora','medio_difusion', 'req_internet','escenario']$/;"	kind:variable	line:42
+fields	../reserva/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:19
+fields	../reserva/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:26
+fields	../reserva/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:37
+fields	../reserva/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:52
+fields	../reserva/migrations/0001_initial.py	/^            fields=[$/;"	kind:variable	line:60
+forms	../reserva/forms.py	/^from django import  forms$/;"	kind:namespace	line:1
+forms.py	../reserva/forms.py	1;"	kind:file	line:1
+get_object_or_404	../reserva/views.py	/^from django.shortcuts import render_to_response,get_object_or_404, render,HttpResponseRedirect$/;"	kind:namespace	line:1
+get_wsgi_application	../ReservaEscenario/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	kind:namespace	line:12
+hora	../reserva/models.py	/^    hora= models.DateTimeField()$/;"	kind:variable	line:67
+imagen	../reserva/models.py	/^    imagen=models.ImageField(upload_to='escenarios',default=' Default Value')#falta algo$/;"	kind:variable	line:26
+img	../reserva/models.py	/^    img= models.ForeignKey(ImgEscenario)$/;"	kind:variable	line:70
+include	../ReservaEscenario/urls.py	/^from django.conf.urls import  include, url$/;"	kind:namespace	line:16
+initial	../reserva/migrations/0001_initial.py	/^    initial = True$/;"	kind:variable	line:11
+labels	../reserva/forms.py	/^        labels = {$/;"	kind:variable	line:23
+labels	../reserva/forms.py	/^        labels = {$/;"	kind:variable	line:43
+labels	../reserva/forms.py	/^        labels ={$/;"	kind:variable	line:114
+labels	../reserva/forms.py	/^        labels={$/;"	kind:variable	line:133
+listarEscenario	../reserva/views.py	/^def listarEscenario(request):$/;"	kind:function	line:26
+listarPresentacion	../reserva/views.py	/^def listarPresentacion(request):$/;"	kind:function	line:64
+login	../reserva/views.py	/^def login(request):$/;"	kind:function	line:19
+loginForm	../reserva/forms.py	/^class loginForm(forms.Form):$/;"	kind:class	line:10
+loginForm	../reserva/views.py	/^from .forms import loginForm$/;"	kind:namespace	line:4
+manage.py	../manage.py	1;"	kind:file	line:1
+medio_difusion	../reserva/models.py	/^    medio_difusion=models.FileField()$/;"	kind:variable	line:68
+messages	../reserva/views.py	/^from django.contrib import  messages$/;"	kind:namespace	line:13
+migrations	../reserva/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+model	../reserva/forms.py	/^        model = Escenario$/;"	kind:variable	line:21
+model	../reserva/forms.py	/^        model= Comentario$/;"	kind:variable	line:131
+model	../reserva/forms.py	/^        model= Evento$/;"	kind:variable	line:41
+model	../reserva/forms.py	/^        model=ImgEscenario$/;"	kind:variable	line:112
+model_name	../reserva/migrations/0001_initial.py	/^            model_name='comentario',$/;"	kind:variable	line:73
+model_name	../reserva/migrations/0001_initial.py	/^            model_name='evento',$/;"	kind:variable	line:68
+models	../reserva/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	kind:namespace	line:5
+models	../reserva/migrations/0001_initial.py	/^import django.db.models.deletion$/;"	kind:namespace	line:6
+models	../reserva/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models	../user/models.py	/^from django.db import models$/;"	kind:namespace	line:1
+models.py	../reserva/models.py	1;"	kind:file	line:1
+models.py	../user/models.py	1;"	kind:file	line:1
+name	../reserva/apps.py	/^    name = 'reserva'$/;"	kind:variable	line:5
+name	../reserva/migrations/0001_initial.py	/^            name='Comentario',$/;"	kind:variable	line:18
+name	../reserva/migrations/0001_initial.py	/^            name='Escenario',$/;"	kind:variable	line:25
+name	../reserva/migrations/0001_initial.py	/^            name='Evento',$/;"	kind:variable	line:36
+name	../reserva/migrations/0001_initial.py	/^            name='ImgEscenario',$/;"	kind:variable	line:51
+name	../reserva/migrations/0001_initial.py	/^            name='Recurso',$/;"	kind:variable	line:59
+name	../reserva/migrations/0001_initial.py	/^            name='evento',$/;"	kind:variable	line:74
+name	../reserva/migrations/0001_initial.py	/^            name='img',$/;"	kind:variable	line:69
+name	../user/apps.py	/^    name = 'user'$/;"	kind:variable	line:5
+nombre_escenario	../reserva/models.py	/^    nombre_escenario = models.CharField(max_length=200)$/;"	kind:variable	line:23
+nombre_evento	../reserva/models.py	/^    nombre_evento =models.CharField(max_length=200)$/;"	kind:variable	line:62
+objetivo	../reserva/models.py	/^    objetivo=models.TextField()$/;"	kind:variable	line:65
+observacionesEvento	../reserva/views.py	/^def observacionesEvento(request):$/;"	kind:function	line:183
+operations	../reserva/migrations/0001_initial.py	/^    operations = [$/;"	kind:variable	line:16
+os	../ReservaEscenario/settings.py	/^import os$/;"	kind:namespace	line:13
+os	../ReservaEscenario/wsgi.py	/^import os$/;"	kind:namespace	line:10
+os	../manage.py	/^import os$/;"	kind:namespace	line:2
+password	../reserva/forms.py	/^    password=forms.CharField(max_length=50,widget=forms.TextInput(attrs={$/;"	kind:variable	line:15
+presEscenario	../reserva/forms.py	/^class presEscenario(forms.ModelForm):$/;"	kind:class	line:110
+presEscenario	../reserva/views.py	/^from .forms import presEscenario$/;"	kind:namespace	line:12
+presEscenario	../reserva/views.py	/^from .forms import presEscenario$/;"	kind:namespace	line:16
+presentacion	../reserva/models.py	/^    presentacion = models.ImageField(upload_to='escenarios',default=' Default Value')#falta algo$/;"	kind:variable	line:36
+prinEventos	../reserva/views.py	/^def prinEventos(request):$/;"	kind:function	line:101
+redirect	../reserva/views.py	/^from django.shortcuts import redirect$/;"	kind:namespace	line:5
+render	../reserva/views.py	/^from django.shortcuts import render_to_response,get_object_or_404, render,HttpResponseRedirect$/;"	kind:namespace	line:1
+render	../user/views.py	/^from django.shortcuts import render$/;"	kind:namespace	line:1
+render_to_response	../reserva/views.py	/^from django.shortcuts import render_to_response,get_object_or_404, render,HttpResponseRedirect$/;"	kind:namespace	line:1
+req_internet	../reserva/models.py	/^    req_internet = models.BooleanField()$/;"	kind:variable	line:69
+requerimientos	../reserva/views.py	/^def requerimientos(request):$/;"	kind:function	line:204
+reservarEvento	../reserva/views.py	/^def reservarEvento(request):$/;"	kind:function	line:111
+reverse	../reserva/views.py	/^from django.core.urlresolvers import reverse, reverse_lazy$/;"	kind:namespace	line:14
+reverse	../reserva/views.py	/^from django.urls import reverse$/;"	kind:namespace	line:2
+reverse_lazy	../reserva/views.py	/^from django.core.urlresolvers import reverse, reverse_lazy$/;"	kind:namespace	line:14
+settings	../ReservaEscenario/urls.py	/^from django.conf import settings$/;"	kind:namespace	line:18
+settings.py	../ReservaEscenario/settings.py	1;"	kind:file	line:1
+static	../ReservaEscenario/urls.py	/^from django.conf.urls.static import static$/;"	kind:namespace	line:19
+sys	../manage.py	/^import sys$/;"	kind:namespace	line:3
+tests.py	../reserva/tests.py	1;"	kind:file	line:1
+tests.py	../user/tests.py	1;"	kind:file	line:1
+tipo_equipo	../reserva/models.py	/^    tipo_equipo=models.CharField(max_length=1, choices=TIPO_EQUIPO,default='Default Value')$/;"	kind:variable	line:97
+tipo_equipoAudio	../reserva/models.py	/^    tipo_equipoAudio=models.CharField(max_length=1, choices=TIPO_EQUIPOAUDIO,default='Default Value')$/;"	kind:variable	line:98
+tipo_escenario	../reserva/models.py	/^    tipo_escenario=models.CharField(max_length=1, choices= TIPO_ESCENARIO, default=' Default Value')$/;"	kind:variable	line:24
+tipo_evento	../reserva/models.py	/^    tipo_evento=models.CharField(max_length=3,choices=TIPO_EVENTO)$/;"	kind:variable	line:64
+ubicacion	../reserva/models.py	/^    ubicacion= models.CharField(max_length=250)$/;"	kind:variable	line:25
+unicode_literals	../reserva/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	kind:namespace	line:3
+url	../ReservaEscenario/urls.py	/^from django.conf.urls import  include, url$/;"	kind:namespace	line:16
+url	../reserva/urls.py	/^from django.conf.urls import url$/;"	kind:namespace	line:1
+urlpatterns	../ReservaEscenario/urls.py	/^urlpatterns = [$/;"	kind:variable	line:21
+urlpatterns	../reserva/urls.py	/^urlpatterns=[$/;"	kind:variable	line:4
+urls.py	../ReservaEscenario/urls.py	1;"	kind:file	line:1
+urls.py	../reserva/urls.py	1;"	kind:file	line:1
+username	../reserva/forms.py	/^    username=forms.CharField(max_length=50,$/;"	kind:variable	line:11
+views	../reserva/urls.py	/^from .import views$/;"	kind:namespace	line:2
+views.py	../reserva/views.py	1;"	kind:file	line:1
+views.py	../user/views.py	1;"	kind:file	line:1
+widget	../reserva/forms.py	/^                             widget= forms.TextInput(attrs={$/;"	kind:variable	line:12
+widgets	../reserva/forms.py	/^        widgets = {$/;"	kind:variable	line:120
+widgets	../reserva/forms.py	/^        widgets = {$/;"	kind:variable	line:31
+widgets	../reserva/forms.py	/^        widgets = {$/;"	kind:variable	line:57
+wsgi.py	../ReservaEscenario/wsgi.py	1;"	kind:file	line:1

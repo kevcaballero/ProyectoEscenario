@@ -1,0 +1,20 @@
+nombre_evento
+-requerido
+-longitud 200 caracteres
+capacidad_evento
+-requerido
+-numeros
+tipo_evento
+-requerido
+descripcion
+-requerido
+fecha
+-requerido
+-formato
+hora
+-requerido
+-formato
+presentacion_escenario
+-requerido
+
+

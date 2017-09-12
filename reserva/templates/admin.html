@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block styles %}
+
+        <link rel="stylesheet" href="{%  static 'reserva/css/admin.css' %}">
+        <script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/reserva/css/font-awesome-4.7.0/css/font-awesome.min.css">
+{% endblock styles %}
+
+{% block title %}|Administrar{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Menú
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="{% url 'reserva:listarEscenario' %}">Ver todos los escenarios</a>
+                </li>
+                <li>
+                    <a href="{% url 'reserva:agregarEscenario' %}">Agregar Escenario</a>
+                </li>
+                <li>
+                    <a href="{% url 'reserva:agregarPresentacion' %}">Agregar Presentacion </a>
+                </li>
+                 <li>
+                    <a href="{% url 'reserva:listarPresentacion' %}">Ver Presentaciones </a>
+                </li>
+
+                <li>
+                    <a href="#">Ver todos los eventos</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <a href="#menu-toggle" class="btn btn-default hidden-md-up" id="menu-toggle"> <i class="fa fa-outdent fa-2x"></i> Menu </a>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-12 col-md-3">
+                        <div class="row">
+
+                        <div class="col" >
+                                <!-- Indicates a successful or positive action -->
+
+                                <button type="button" class=" btnEventos rounded btn btn-success"><i class="fa fa-check-square"> </i>  Atendidos</button>
+                        </div>
+
+                        <div class="col">
+                            <!-- Contextual button for informational alert messages -->
+                                <button type="button" class="btnEventos btn btn-info"><i class="fa fa-thumbs-o-up"></i> Confirmados </button>
+                        </div>
+
+                        <div class="col">
+                            <!-- Indicates caution should be taken with this action -->
+                                <button type="button" class="btnEventos btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Pendientes</button>
+
+                        </div>
+                        <div class="col">
+                                    <!-- Indicates a dangerous or potentially negative action -->
+                                <button type="button" class="btnEventos btn btn-danger"><i class="fa fa-window-close"></i> Cancelados</button>
+                        </div>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+
+
+
+
+
+{% endblock content %}
+
+{% block scripts %}
+
+     <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+ {% endblock scripts %}
+
+

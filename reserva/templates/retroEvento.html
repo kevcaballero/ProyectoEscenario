@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+{% block styles %}
+
+        <link rel="stylesheet" href="{%  static 'reserva/css/eventoProgramado.css'%}">
+        <script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'reserva/css/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+{% endblock styles %}
+
+
+
+{% block title %}|Reservar{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col col-md-12 col-sm-12">
+
+            <h4 class="lead">Ayudanos a mejorar! Proporciona las observaciones de tu evento</h4>
+
+            <hr class="my-4">
+            <form method="POST" action="">{% csrf_token %}
+                <br><br>
+                {{ form.contenido.label_tag}} <br><br>{{form.contenido}}
+
+            </form>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock content %}
