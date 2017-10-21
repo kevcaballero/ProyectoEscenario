@@ -1,3 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response,get_object_or_404, render,HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import TemplateView, FormView, CreateView, DetailView, UpdateView, DeleteView
@@ -12,34 +16,66 @@ from .models import  ImgEscenario
 from .forms import presEscenario
 from django.contrib import  messages
 from django.core.urlresolvers import reverse, reverse_lazy
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 from .forms import presEscenario
 # Create your views here.
 
 def login_user(request):
-    if request.method == 'GET':
-        if request.user.is_authenticated():
-            return redirect('reserva:administrar')
-        else:
-            return render(request, 'login.html')
-    elif request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('reserva:administrar')
-        else:
-            return redirect('reserva:login_user')
+    
+    """
+    Función para logear usuario, si esta autenticado envia directo al dashboard
+    si no valida los campos, verifica que el usuario exista y este activo y envia
+    al dashboard de lo contrario envia el mensaje 'Usuario y/o Password incorrectos'
+    """
+    mensaje = ""
+    if request.user.is_authenticated():
+        return redirect('reserva:administrar')
+    else:
+        if request.method == "POST":
+            form = loginForm(request.POST)
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(username=username, password=password)
+            if user is not None and user.is_active:
+                login(request, user)
+                return redirect('reserva:administrar')        
+            else:
+                mensaje = "Usuario y/o Password incorrectos"
+        
+        form = loginForm()
+        ctx = {'form': form, 'mensaje': mensaje}
+        return render(request, 'reserva/login.html', ctx)
+
+
+
+def logout_def(request):
+    
+    """
+    Función para salir de la aplicación
+    """
+    logout(request)
+    return redirect("reserva:login_user")
+
+
+@login_required
+def administrar(request):
+
+    """
+    Función que lleva al dashboard de la aplicación
+    """
+    lista_escenarios = Escenario.objects.all()
+    return render_to_response('reserva/admin.html',
+                              {'lista_escenarios': lista_escenarios})
 
 
 def listarEscenario(request):
-    return render_to_response("escenarios.html", {"lista_escenarios": Escenario.objects.all(), "messages": messages.get_messages(request)})
+    return render_to_response('reserva/escenarios.html',
+                              {'lista_escenarios': Escenario.objects.all(),
+                              'messages': messages.get_messages(request)})
 
 
-
-
+# :TODO: Componer estar funciones  
 def agregarEscenario(request):
 
     if request.method == 'POST':
@@ -204,13 +240,9 @@ def observacionesEvento(request):
 
 
 
-def administrar(request):
-    lista_escenarios=Escenario.objects.all()
-    return render_to_response(
-        'admin.html',
-        {'lista_escenarios': lista_escenarios,
 
-         })
+
+
 def requerimientos(request):
 
     car_evento=Evento.objects.all()

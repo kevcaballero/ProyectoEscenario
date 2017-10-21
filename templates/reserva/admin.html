@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block styles %}
+{% endblock styles %}
+{% block title %}Administrar{% endblock %}
+
+{% block content %}
+
+<div id="page-content-wrapper">
+                        <a href="#menu-toggle" class="btn btn-default hidden-md-up" id="menu-toggle"> <i class="fa fa-outdent fa-2x"></i> Menu </a>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col col-lg-12 col-md-3">
+                                    <div class="row">
+            
+                                    <div class="col" >
+                                            <!-- Indicates a successful or positive action -->
+            
+                                            <button type="button" class=" btnEventos rounded btn btn-success"><i class="fa fa-check-square"> </i>  Atendidos</button>
+                                    </div>
+            
+                                    <div class="col">
+                                        <!-- Contextual button for informational alert messages -->
+                                            <button type="button" class="btnEventos btn btn-info"><i class="fa fa-thumbs-o-up"></i> Confirmados </button>
+                                    </div>
+            
+                                    <div class="col">
+                                        <!-- Indicates caution should be taken with this action -->
+                                            <button type="button" class="btnEventos btn btn-warning"><i class="fa fa-exclamation-triangle"></i> Pendientes</button>
+            
+                                    </div>
+                                    <div class="col">
+                                                <!-- Indicates a dangerous or potentially negative action -->
+                                            <button type="button" class="btnEventos btn btn-danger"><i class="fa fa-window-close"></i> Cancelados</button>
+                                    </div>
+                                        </div>
+            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}
+
+{% block scripts %}
+
+     <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+ {% endblock scripts %}
+
+

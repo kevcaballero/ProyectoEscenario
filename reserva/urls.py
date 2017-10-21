@@ -3,6 +3,7 @@ from .import views
 
 urlpatterns=[
     url(r'^$', views.login_user, name='login_user'),
+    url(r'^salir/$', views.logout_def, name='logout_def'),
     url(r'^administrar/$', views.administrar, name='administrar'),
     url(r'^escenarios/lista/$',views.listarEscenario,name='listarEscenario'),
     url(r'^escenarios/agregar/$',views.agregarEscenario,name='agregarEscenario'),

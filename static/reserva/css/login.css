@@ -21,3 +21,10 @@ i.fa{
 .navbar-inverse .navbar-brand .navbar-toggler{
     color: black;
 }
+
+.error {
+    text-align: center;
+    padding: 15px;
+    font-weight: 500;
+    color: red;
+}
