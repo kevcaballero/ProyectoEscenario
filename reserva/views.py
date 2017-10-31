@@ -84,10 +84,9 @@ def agregarEscenario(request):
             form.save()
             messages.add_message(request, messages.SUCCESS, "El escenario ha sido guardado!")
             return redirect(reverse('reserva:listarEscenario'))
-
     else:
         form=datosEscenario()
-    return render(request, 'altaEscenario.html', {'form': form})
+    return render(request, 'reserva/altaEscenario.html', {'form': form})
 
 def actualizarEscenario(request, idescenario):
     instance= get_object_or_404(Escenario, id=idescenario)
@@ -185,7 +184,7 @@ def reservarEvento(request):
     else:
         form = datosEvento()
         formPresentaciones = presEscenario()#
-    return render_to_response('eventoProgramado.html',
+    return render_to_response('reserva/eventoProgramado.html',
                                   {'form': form,
                                    'lista_escenarios': lista_escenarios,})
 

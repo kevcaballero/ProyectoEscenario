@@ -1,32 +1,17 @@
-{% extends 'base.html' %}
-
-{% load static from staticfiles %}
-{% block styles %}
-<meta charset="UTF-8">
-<link rel="stylesheet" href="{%  static 'reserva/css/eventoProgramado.css'%}">
-<script href="{% static 'reserva/jquery/jquery.min.js' %}"></script>
-<script src="{% static 'reserva/jquery/jquery.datetimepicker.full.js'%}"></script>
-<link rel="stylesheet" href="{% static 'reserva/css/jquery.datetimepicker.min.css'%}">
-<link rel="stylesheet" href="static/reserva/css/font-awesome-4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-{% endblock styles %}
-
-
-
-{% block title %}|Reservar{% endblock %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %} Reservar{% endblock %} 
 
 {% block content %}
 
-<div id ="tab"class="container">
+<div id="tab" class="container">
     <div class="row">
         <div class="col-xs-6 ">
 
-
-
             <!-- Nav tabs -->
-            <ul id ="listaTabs" class="nav nav-pills  " role="tablist">
+            <ul id="listaTabs" class="nav nav-pills  " role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#Paso1" role="tab">Paso 1:  Selecciona tu evento en el calendario </a>
+                    <a class="nav-link active" data-toggle="tab" href="#Paso1" role="tab">Paso 1: Selecciona tu evento en el calendario </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#Paso2" role="tab">Paso 2: Proporciona tus requerimientos </a>
@@ -45,17 +30,18 @@
 
 
                     <!-- Primera fila: cards -->
-                    <div class="container" >
+                    <div class="container">
                         <div class="row " style="margin-bottom:100px;">
                             <div class="col" id="scroll">
 
 
 
-                            {% for Escenario in lista_escenarios  %}
+                                {% for Escenario in lista_escenarios %}
 
 
                                 <div class="card w-50" style="width: 20rem;">
-                                    <img class="card-img-top" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRuI8wYXisr7dP6rtOt5jLdQkH-t9uTucK8uMaIpg9NJvFIVuZJ9A" alt="Card image ">
+                                    <img class="card-img-top" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRuI8wYXisr7dP6rtOt5jLdQkH-t9uTucK8uMaIpg9NJvFIVuZJ9A"
+                                        alt="Card image ">
                                     <div class="card-block">
 
                                         <h4 class="card-title">{{ Escenario.nombre_escenario}}</h4>
@@ -67,18 +53,14 @@
 
 
 
-                            {% endfor %}
+                                {% endfor %}
                             </div>
                             <div class="col">
 
 
                                 <h4 class="lead">Elige tu escenario y fecha de tu evento</h4>
                                 <hr class="my-4">
-                                <form method="POST" action="" >{% csrf_token %}
-
-
-
-                                    {{ form.escenario.label_tag}} {{ form.escenario.as_widget }}
+                                <form method="POST" action="">{% csrf_token %} {{ form.escenario.label_tag}} {{ form.escenario.as_widget }}
 
 
 
@@ -87,7 +69,20 @@
                                 <input id="datetimepicker3" value="today">
                                 <input id="datetimepicker2" value="today">
 
-                                <div class="row"><button class="obtenerFecha btn btn-primary btn-lg">Hecho</button></div>
+                                <!-- <div class='col-sm-6'>
+                                    <div class="form-group">
+                                        <div class='input-group date' id='datetimepicker1'>
+                                            <input type='text' class="form-control" />
+                                            <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="row">
+                                    <button class="obtenerFecha btn btn-primary btn-lg">Hecho</button>
+                                </div>
 
 
 
@@ -116,17 +111,19 @@
                                 <h4 class="lead">Generalidades</h4>
                                 <hr class="my-4">
 
-                                <form class="validate" method="POST" action="" >{% csrf_token %}
-
-                                    {{ form.nombre_evento.label_tag}} {{form.nombre_evento.as_widget}}<span id="al1"></span><br>
-
-                                    {{ form.escenario.label_tag}} {{form.escenario.as_widget}}<span id=""></span><br>
-
-                                    {{ form.capacidad_evento.label_tag}} {{ form.capacidad_evento.as_widget }}<span id="al2"></span><br>
-
-                                    {{ form.tipo_evento.label_tag}} {{ form.tipo_evento.as_widget }}<span id="al3"></span><br>
-
-                                    {{ form.objetivo.label_tag}} {{ form.objetivo.as_widget }}<span id="al4"></span><br>
+                                <form class="validate" method="POST" action="">{% csrf_token %} {{ form.nombre_evento.label_tag}} {{form.nombre_evento.as_widget}}
+                                    <span
+                                        id="al1"></span>
+                                        <br> {{ form.escenario.label_tag}} {{form.escenario.as_widget}}
+                                        <span id=""></span>
+                                        <br> {{ form.capacidad_evento.label_tag}} {{ form.capacidad_evento.as_widget }}
+                                        <span
+                                            id="al2"></span>
+                                            <br> {{ form.tipo_evento.label_tag}} {{ form.tipo_evento.as_widget }}
+                                            <span id="al3"></span>
+                                            <br> {{ form.objetivo.label_tag}} {{ form.objetivo.as_widget }}
+                                            <span id="al4"></span>
+                                            <br>
 
 
 
@@ -141,21 +138,19 @@
                                 <h4 class="lead">Caracteristicas</h4>
                                 <hr class="my-4">
 
-                                <form class="validate" method="POST" action="">{% csrf_token %}
-
-                                    {{ form.fecha.label_tag }} {{form.fecha.as_widget }}<span id="al5"></span><br>
-
-                                    {{ form.hora.label_tag }} {{ form.hora.as_widget }}<br>
-
-                                    {{ form.medio_difusion.label_tag }} <br> {{ form.medio_difusion.as_widget}}<br>
-
-                                    {{ form.req_internet.label_tag }}<br> {{ form.req_internet.as_widget}}
+                                <form class="validate" method="POST" action="">{% csrf_token %} {{ form.fecha.label_tag }} {{form.fecha.as_widget }}
+                                    <span id="al5"></span>
+                                    <br> {{ form.hora.label_tag }} {{ form.hora.as_widget }}
+                                    <br> {{ form.medio_difusion.label_tag }}
+                                    <br> {{ form.medio_difusion.as_widget}}
+                                    <br> {{ form.req_internet.label_tag }}
+                                    <br> {{ form.req_internet.as_widget}}
 
 
                                     <h4 class="lead">Presentacion del Escenario </h4>
                                     <hr class="my-4">
                                     <!-- Button trigger modal -->
-                                    <button id ="pres"type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    <button id="pres" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                         Elige presentacion del Escenario</button>
 
                                     <!-- Modal -->
@@ -171,8 +166,8 @@
                                                 <div class="modal-body">
 
                                                     <!-- Contenido del Modal -->
-                                                    <h5 >Presentaciones</h5>
-                                                    <p class="lead"  ></p>
+                                                    <h5>Presentaciones</h5>
+                                                    <p class="lead"></p>
                                                     <div class="row">
                                                         <div class="col">
 
@@ -185,7 +180,7 @@
                                                         <div class="col">
 
                                                             <figure class="figure">
-                                                                <img src="..." class="figure-img img-fluid rounded" alt="">
+                                                                <img src="" class="figure-img img-fluid rounded" alt="">
                                                                 <figcaption class="figure-caption">Modo X.</figcaption>
                                                             </figure>
                                                         </div>
@@ -193,7 +188,7 @@
                                                         <div class="col">
 
                                                             <figure class="figure">
-                                                                <img src="..." class="figure-img img-fluid rounded" alt="">
+                                                                <img src="" class="figure-img img-fluid rounded" alt="">
                                                                 <figcaption class="figure-caption">Modo X.</figcaption>
                                                             </figure>
                                                         </div>
@@ -247,36 +242,36 @@
 
                     <div class="container">
 
-                        <h5 >Nombre del evento:</h5>
-                        <p class="lead"  id="campo1"></p>
+                        <h5>Nombre del evento:</h5>
+                        <p class="lead" id="campo1"></p>
                         <hr class="my-4">
 
-                        <h5 >Capacidad del evento:</h5>
-                        <p class="lead"  id="campo2"></p>
+                        <h5>Capacidad del evento:</h5>
+                        <p class="lead" id="campo2"></p>
                         <hr class="my-4">
 
-                        <h5 >Tipo de evento:</h5>
+                        <h5>Tipo de evento:</h5>
                         <p class="lead" id="campo3"></p>
                         <hr class="my-4">
 
-                        <h5 >Objetivo del evento:</h5>
+                        <h5>Objetivo del evento:</h5>
                         <p class="lead" id="campo4"></p>
                         <hr class="my-4">
 
-                        <h5 >Fecha del evento:</h5>
+                        <h5>Fecha del evento:</h5>
                         <p class="lead" id="campo5"></p>
                         <hr class="my-4">
 
-                        <h5 >Hora del evento:</h5>
+                        <h5>Hora del evento:</h5>
                         <p class="lead" id="campo6"></p>
                         <hr class="my-4">
 
-                        <h5 >Medio de difusion del evento:</h5>
+                        <h5>Medio de difusion del evento:</h5>
                         <p id="campo7"></p>
                         <hr class="my-4">
-                        <img  id="preview" style="height:200px;">
+                        <img id="preview" style="height:200px;">
 
-                        <h5 >Disponibilidad de Internet:</h5>
+                        <h5>Disponibilidad de Internet:</h5>
                         <p id="campo8"></p>
                         <hr class="my-4">
                         <input id="confirmar" type="submit" class="btn btn-primary btn-lg">CONFIRMAR</input>
@@ -301,29 +296,31 @@
 
 
 
-{% endblock content %}
-
-
-{% block scripts %}
+{% endblock content %} {% block scripts %}
 <script>
 
 
 
-    $(document).ready(function() {
+    $(document).ready(function () {
+
+        console.log("Ready");
+
+
+        //$('#datetimepicker1').datetimepicker();
 
 
 
-        <!-- Inicializacion de funciones-->
+        // Inicializacion de funciones 
         agregarClase();
         mostrardatosEvento();
 
-        <!-- Eventos-->
-        $(window).resize(function() {
+        // Eventos
+        $(window).resize(function () {
             agregarClase();
 
         });
 
-        $('#guardar' ).click(function () {
+        $('#guardar').click(function () {
 
             mostrardatosEvento();
             campoVacio();
@@ -334,19 +331,17 @@
             limpiarInputs();
 
         })
-        $("#escenario").change(function(){
+        $("#escenario").change(function () {
             $('#escenario option:selected').text();
-});
+        });
 
 
 
-        function agregarClase()
-        {
+        function agregarClase() {
 
-            var anchoP= $(window).width();
+            var anchoP = $(window).width();
 
-            if (anchoP < 576)
-            {
+            if (anchoP < 576) {
 
                 $('#listaTabs').addClass('flex-column');
                 $('.nav-link').append("<i></i>");
@@ -358,16 +353,16 @@
 
         }
 
-        function mostrardatosEvento(){
+        function mostrardatosEvento() {
 
 
-            var campo1= $('#nombre_evento').val();
+            var campo1 = $('#nombre_evento').val();
             var campo2 = $('#capacidad_evento').val();
             var campo3 = $('#tipo_evento option:selected').text();
             var campo4 = $('#objetivo').val();
             var campo5 = $('#fecha').val();
-            var campo6 =$('#hora').val();
-            var campo7 =$('#medio_difusion').val();
+            var campo6 = $('#hora').val();
+            var campo7 = $('#medio_difusion').val();
             var campo8 = $('#req_internet').val();
 
             $('#campo1').text(campo1);
@@ -387,25 +382,23 @@
 
 
         function mostrarArchivos(input) {
-            if (input.files && input.files[0])
-            {
+            if (input.files && input.files[0]) {
                 var reader = new FileReader();
-                reader.onload = function (e)
-                {
+                reader.onload = function (e) {
                     $('#preview').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(input.files[0]);
             }
         }
 
-        $("#medio_difusion").change(function(){
+        $("#medio_difusion").change(function () {
             mostrarArchivos(this);
         });
 
 
 
-        <!-- Funcion para validar campos del form-->
-        <!-- nombre_evento-->
+        // Funcion para validar campos del form-->
+        // nombre_evento
 
         $('#nombre_evento').focusin(function () {
             $(this).addClass("miClase");
@@ -413,41 +406,41 @@
         });
 
         $('#nombre_evento').focusout(function () {
-            if ($(this).val()==""){
+            if ($(this).val() == "") {
                 $('#al1').html("<span style='color: firebrick'>Este campo es obligatorio</span>");
             }
-            else if($(this).val.length > 200){
+            else if ($(this).val.length > 200) {
                 $('#al1').html("<span style='color: firebrick'>Este campo debe contener menos de 200 caracteres</span>")
             }
 
-            else{
+            else {
                 $('#al1').html("<span></span>");
             }
-            });
+        });
 
-        <!-- capacidad_evento-->
-         $('#capacidad_evento').focusin(function () {
+        // capacidad_evento
+        $('#capacidad_evento').focusin(function () {
             $(this).addClass("miClase");
 
         });
 
         $('#capacidad_evento').focusout(function () {
-            if (isNaN($(this).val())){
+            if (isNaN($(this).val())) {
                 $('#al2').html("<span style='color: firebrick'>Este campo solo admite numeros</span>");
             }
-            else if($(this).val()==""){
+            else if ($(this).val() == "") {
                 $('#al2').html("<span style='color: firebrick'>Este campo es obligatorio</span>");
 
             }
 
-             else {
+            else {
                 $('#al2').html("<span></span>");
             }
 
 
         });
 
-        <!-- tipo_evento-->
+        //tipo_evento
 
         $('#tipo_evento').focusin(function () {
             $(this).addClass("miClase");
@@ -458,29 +451,29 @@
 
         $('#tipo_evento').focusout(function () {
 
-            if ($('#tipo_evento option:selected').val()===""){
+            if ($('#tipo_evento option:selected').val() === "") {
                 $('#al3').html("<span style='color: firebrick'>Selecciona alguna opcion</span>");
             }
 
-             else {
+            else {
                 $('#al3').html("<span></span>");
             }
 
 
         });
 
-        <!-- objetivo_evento-->
+        // objetivo_evento
         $('#objetivo').focusin(function () {
             $(this).addClass("miClase");
 
         });
 
         $('#objetivo').focusout(function () {
-            if ($(this).val()==""){
+            if ($(this).val() == "") {
                 $('#al4').html("<span style='color: firebrick'>Este campo es obligatorio</span>");
             }
 
-             else {
+            else {
                 $('#al4').html("<span></span>");
             }
 
@@ -491,7 +484,7 @@
 
 
         function campoVacio() {
-            if ($('#nombre_evento').val()== "" ||$('#capacidad_evento').val()== "" || $("#tipo_evento option:selected").val() == "" || $('#objetivo').val()=="" ) {
+            if ($('#nombre_evento').val() == "" || $('#capacidad_evento').val() == "" || $("#tipo_evento option:selected").val() == "" || $('#objetivo').val() == "") {
                 alert("Faltan campos por llenar, asegurese de llenar todos los campos");
             }
 
@@ -511,10 +504,11 @@
             $(this).tab('show')
         })
 
-        $("#pres").click(function(){
+        $("#pres").click(function () {
             $("#myModal").modal();
         });
 
+        
         jQuery('#datetimepicker3').datetimepicker({
             format:'d.m.Y ',
             inline:true,
@@ -546,7 +540,4 @@
     });
 
 
-</script>
-
-
-{% endblock scripts %}
+</script> {% endblock %}

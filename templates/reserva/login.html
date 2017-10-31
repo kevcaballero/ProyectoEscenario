@@ -1,5 +1,6 @@
 {% extends 'base_login.html' %}
 {% load static from staticfiles %}
+{% load socialaccount %}
 {% block styles %}
     <link rel="stylesheet" href="{%  static 'reserva/css/login.css'%}">
     <link rel="stylesheet" href="{% static 'reserva/css/font-awesome-4.7.0/css/font-awesome.min.css' %}">
@@ -34,7 +35,15 @@
 
                         <div class="form-group justify-content-center">
                             <button type="submit" class="btn btn-default">Iniciar</button>
+                            
                         </div>
+                        <div class="form-group justify-content-center">
+                            <a id="google_login" href="/accounts/google/login" class="btn btn-success">
+                                Sign in with Google
+                            </a>
+                            
+                        </div>
+                        
                         <div class="error">
                             {{ mensaje }}
                         </div>

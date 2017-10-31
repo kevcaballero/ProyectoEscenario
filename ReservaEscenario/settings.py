@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reserva',
     'social_django',
+
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -125,12 +132,36 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = ""
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = ""
 
-STATIC_URL='/static/'
-MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
-MEDIA_URL='/media/'
-STATICFILES_DIRS =[
-    os.path.join(BASE_DIR, 'static')
-]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+# MEDIA_ROOT=os.path.join(BASE_DIR, 'media')
+# MEDIA_URL='/media/'
+# STATICFILES_DIRS =[
+#     os.path.join(BASE_DIR, 'static')
+# ]
 
 # Login
 LOGIN_URL = "/"
+
+
+
+SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}

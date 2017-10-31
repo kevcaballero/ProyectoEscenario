@@ -2,7 +2,7 @@
 {% load static from staticfiles %}
 {% block styles %}
 {% endblock styles %}
-{% block title %}Administrar{% endblock %}
+{% block title %} Administrar {% endblock %}
 
 {% block content %}
 
@@ -44,6 +44,7 @@
 {% block scripts %}
 
      <script>
+         
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
