@@ -19,7 +19,7 @@ class loginForm(forms.Form):
 class datosEscenario(forms.ModelForm):
     class Meta:
         model = Escenario
-        fields = ['nombre_escenario','tipo_escenario','ubicacion','estado']
+        fields = ['nombre_escenario','tipo_escenario','ubicacion','estado', 'imagen']
         labels = {
             'nombre_escenario':_('Nombre del escenario'),
             'tipo_escenario':_('Tipo de escenario'),

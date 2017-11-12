@@ -5,53 +5,52 @@
 {% block title %} Escenarios {% endblock %}
 
 {% block content %}
+{% if messages %}
+<div class="alert alert-success">
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+</div>
+{% endif %} 
 
 <div class="container">
-    <div class="row">
-        <!-- mostramos los mensajes flash -->
-        {% if messages %}
-        <div class="alert alert-success">
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
+        <div class="row">
+                <h4 class="lead">Escenarios</h4>
         </div>
-        {% endif %}
-        <div class="jumbotron ">
+        <div class="row">
+                <a href="{% url 'reserva:agregarEscenario' %}">[<i class="fa fa-plus" aria-hidden="true"></i>] Agregar Escenario</a>
+        </div>
 
-            {% if lista_escenarios|length > 0 %}
-            <h4 class="lead">Escenarios</h4>
-            <hr class="my-4">
-            {% for Escenario in lista_escenarios %}
-            <div class="col col-md-12" >
-                <div class="container">
-                    <div class="row">
-                        <div class=" col ">
-                            <div class="card w-50" style="width: 20rem;">
-                                <img class="card-img-top" src="{{ Escenario.imagen.url }} " alt="Card image ">
-                                <div class="card-block">
+        <div class="row">
+            <!-- mostramos los mensajes flash -->
+            
 
-                                    <h4 class="card-title">{{ Escenario.nombre_escenario}}</h4>
+        
+            {% for e in lista_escenarios %}
 
-
-
-                                </div>
-                            </div>
-                            <hr class="my-4">
-                        </div>
-
-
-                        <div class="col ">
-                            <a href="{% url 'reserva:actualizarEscenario' Escenario.id %}" class="btn btn-success">Actualizar escenario</a>
-                            <a href="{% url 'reserva:eliminarEscenario' Escenario.id %}" class="btn btn-danger">Eliminar escenario</a>
-                        </div>
-
+                <div class="card" style="width: 20rem;">
+                    {% if e.imagen %}
+                        <img src="{{e.imagen.url}}" class="thumbnail-escenario">
+                    {% else %}
+                        <img src="http://via.placeholder.com/350x150">
+                    {% endif %}
+                    <div class="card-block">
+                        <h4 class="card-title">{{ e.nombre_escenario}}</h4>
+                        <p class="card-text">{{e.get_tipo_escenario_display}} - {{e.ubicacion}}</p>
                     </div>
+                    <div>
+                        <a href="{% url 'reserva:actualizarEscenario' e.id %}">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar escenario</a>
+                        <a href="{% url 'reserva:eliminarEscenario' e.id %}" class="">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar escenario</a>
+                    </div>
+                    
                 </div>
-            </div>
+            {% empty %}
+                <h4 class="lead">Aún no se han agregado escenarios</h4>
             {% endfor %}
-            {% else %}
-            <p>No hay escenarios</p>
-            {% endif %}
+
+        
 
         </div>
     </div>

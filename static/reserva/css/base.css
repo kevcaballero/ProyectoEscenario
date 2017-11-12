@@ -49,3 +49,10 @@ a.salir:hover{
 
 
 }
+
+
+/* clase para la imagen de escenarios */
+.thumbnail-escenario {
+    height: 150px;
+    width: 350px;
+}

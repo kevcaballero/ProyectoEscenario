@@ -68,12 +68,12 @@
                     <a href="{% url 'reserva:administrar' %}">Dashboard</a>
                 </li>
                 <li>
-                    <a href="{% url 'reserva:listarEscenario' %}">Ver todos los escenarios</a>
+                    <a href="{% url 'reserva:listarEscenario' %}">Escenarios</a>
                 </li>
                 <!-- :TODO: Componer estar url -->
-                <li>
+                {% comment %} <li>
                     <a href="{% url 'reserva:agregarEscenario' %}">Agregar Escenario</a>
-                </li>
+                </li> {% endcomment %}
                 <li>
                     <a href="{% url 'reserva:agregarPresentacion' %}">Agregar Presentacion </a>
                 </li>

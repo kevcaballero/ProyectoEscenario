@@ -11,7 +11,7 @@
 
 
 
-{% block title %}|agregarEscenario{% endblock %}
+{% block title %} Agregar escenario{% endblock %}
 
 {% block content %}
 
@@ -22,18 +22,51 @@
 
 
             <h4 class="lead">Agregar Escenario</h4>
+
             <hr class="my-4">
-            <form  role="form" method="POST" enctype="multipart/form-data">{% csrf_token %}
 
-                {{ form.nombre_escenario.label_tag}} {{ form.nombre_escenario }}<span id="al1"></span><br>
+        
+            
+            <form role="form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">{{ form.nombre_escenario.label_tag}} </label>
+                        {{ form.nombre_escenario }}
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">{{ form.tipo_escenario.label_tag}} </label>
+                        {{ form.tipo_escenario }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <label class="form-label">{{ form.ubicacion.label_tag}} </label>
+                        {{ form.ubicacion }}
+                            
+                    </div>   
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">{{ form.estado.label_tag}} </label>
+                        {{ form.estado }}
+                    </div>
+                </div>
 
-                {{ form.tipo_escenario.label_tag}} {{ form.tipo_escenario }}<span id="al2"></span><br>
-
-                {{ form.ubicacion.label_tag}} {{ form.ubicacion }}<span id="al3"></span><br>
-
-               {{ form.imagen.label_tag}} {{ form.imagen }}<span id="al4"></span><br>
-
-                {{ form.estado.label_tag}} {{ form.estado }}<span ></span><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Imagen:</label>
+                        {{form.imagen}}
+                    </div>
+                    <div class="col-md-6">
+                            <label class="form-label">Actualmente:</label>
+                        {% if instance.imagen %} 
+                            <img src="{{instance.imagen.url}}" class="thumbnail-escenario"> 
+                        {% else %}
+                            <img src="http://via.placeholder.com/350x150">
+                        {% endif %}
+                    </div>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Guardar escenario</button>
 

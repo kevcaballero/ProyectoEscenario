@@ -21,6 +21,7 @@ class Escenario(models.Model):
     tipo_escenario=models.CharField(max_length=1, choices=TIPO_ESCENARIO, default='Default Value')
     ubicacion= models.CharField(max_length=250)
     estado=models.CharField(max_length=1, choices=ESTADO_ESCENARIO, default=ESTADO_ESCENARIO[1][1])
+    imagen = models.ImageField(upload_to='img/escenarios', blank=True, null=True)
 
     def __str__(self):
         return self.nombre_escenario

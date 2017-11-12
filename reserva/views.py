@@ -68,15 +68,19 @@ def administrar(request):
     return render_to_response('reserva/admin.html',
                               {'lista_escenarios': lista_escenarios})
 
-
+@login_required
 def listarEscenario(request):
     return render_to_response('reserva/escenarios.html',
                               {'lista_escenarios': Escenario.objects.all(),
                               'messages': messages.get_messages(request)})
 
 
-# :TODO: Componer estar funciones  
+@login_required
 def agregarEscenario(request):
+    
+    """
+    Agrega un escenario nuevo
+    """
 
     if request.method == 'POST':
         form = datosEscenario(request.POST, request.FILES)
@@ -88,9 +92,16 @@ def agregarEscenario(request):
         form=datosEscenario()
     return render(request, 'reserva/altaEscenario.html', {'form': form})
 
+
+@login_required
 def actualizarEscenario(request, idescenario):
+
+    """
+    Actualiza el escenario existente
+    """
     instance= get_object_or_404(Escenario, id=idescenario)
-    form=datosEscenario(request.POST ,request.FILES, instance=instance)
+    form=datosEscenario(request.POST, request.FILES, instance=instance)
+
     if request.method=='POST':
         if form.is_valid():
             form.save()
@@ -98,9 +109,11 @@ def actualizarEscenario(request, idescenario):
             return redirect(reverse('reserva:listarEscenario'))
     else:
         form=datosEscenario(instance=instance)
-    return render(request, 'altaEscenario.html',{
+    return render(request, 'reserva/altaEscenario.html',{
                                     'form':form,'instance':instance
                                     })
+
+                                    
 def eliminarEscenario(request,idescenario):
     instance=get_object_or_404(Escenario, id=idescenario)
     instance.delete()
