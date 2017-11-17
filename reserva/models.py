@@ -35,7 +35,7 @@ class ImgEscenario(models.Model):
         return self.presentacion
 
 class Evento(models.Model):
-    Selecciona=''
+
     Academico='A'
     Deportivo='D'
     Cultural='CRA'
@@ -44,8 +44,6 @@ class Evento(models.Model):
     Capacitacion='CAP'
 
     TIPO_EVENTO = (
-
-        ('','Selecciona'),
         ('A' ,'Academico'),
         ('D', 'Deportivo'),
         ('CRA','Cultural'),
@@ -54,18 +52,17 @@ class Evento(models.Model):
         ('CAP','Capacitacion')
     )
 
-    nombre_evento =models.CharField(max_length=200)
-    capacidad_evento =models.IntegerField(null=True)
-    tipo_evento=models.CharField(max_length=3,choices=TIPO_EVENTO)
-    objetivo=models.TextField()
-    fecha=models.DateField()
-    hora= models.DateTimeField()
-    medio_difusion=models.FileField()
+    nombre_evento = models.CharField(max_length=200)
+    capacidad_evento = models.IntegerField(null=True)
+    tipo_evento = models.CharField(max_length=3, choices=TIPO_EVENTO)
+    objetivo = models.TextField()
+    fecha = models.DateField()
+    hora = models.DateTimeField()
+    medio_difusion = models.FileField()
     req_internet = models.BooleanField()
-    img= models.ForeignKey(ImgEscenario)
-    escenario= models.ForeignKey(Escenario)
+    img = models.ForeignKey(ImgEscenario, blank=True, null=True)
+    escenario = models.ForeignKey(Escenario)
     #organizador=models.ForeignKey(User)#Falta hacer algo
-
 
 
     def __unicode__(self):

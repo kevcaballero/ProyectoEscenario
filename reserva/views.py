@@ -120,8 +120,13 @@ def eliminarEscenario(request,idescenario):
     messages.add_message(request, messages.SUCCESS, "El escenario ha sido eliminado con exito" )
     return redirect(reverse('reserva:listarEscenario'))
 
+
 def listarPresentacion(request):
-    return render_to_response("presentaciones.html", {"lista_presentaciones": ImgEscenario.objects.all(), "messages": messages.get_messages(request)})
+    ctx = {
+        "lista_presentaciones": ImgEscenario.objects.all(), 
+        "messages": messages.get_messages(request)
+    }
+    return render_to_response('reserva/presentaciones.html', ctx)
 
 def agregarPresentacion(request):
 
@@ -134,7 +139,7 @@ def agregarPresentacion(request):
 
     else:
         form=presEscenario()
-    return render(request, 'altaPresentacion.html', {'form': form})
+    return render(request, 'reserva/altaPresentacion.html', {'form': form})
 
 def actualizarPresentacion(request, idimg):
     instance= get_object_or_404(ImgEscenario, id=idimg)

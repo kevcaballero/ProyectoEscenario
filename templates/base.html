@@ -70,13 +70,21 @@
                 <li>
                     <a href="{% url 'reserva:listarEscenario' %}">Escenarios</a>
                 </li>
-                <!-- :TODO: Componer estar url -->
                 {% comment %} <li>
                     <a href="{% url 'reserva:agregarEscenario' %}">Agregar Escenario</a>
-                </li> {% endcomment %}
+                </li> 
+                {% endcomment %}
+                
                 <li>
-                    <a href="{% url 'reserva:agregarPresentacion' %}">Agregar Presentacion </a>
+                    <a href="{% url 'reserva:listarPresentacion' %}">Presentacion </a>
                 </li>
+
+                <li>
+                    <a href="{% url 'reserva:reservarEvento' %}">Reservar Evento </a>
+                </li>
+
+
+                {% comment %} 
                 <li>
                     <a href="{% url 'reserva:listarPresentacion' %}">Ver Presentaciones </a>
                 </li>
@@ -86,7 +94,8 @@
                 </li>
                 <li>
                     <a href="#">Contact</a>
-                </li>
+                </li> 
+                {% endcomment %}
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
