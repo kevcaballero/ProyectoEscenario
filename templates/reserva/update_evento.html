@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Listar eventos {% endblock %}
+
+{% block content %}
+    <h2> Actualizar de evento </h2>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="">Nombre del evento:</label>
+                    {{ form.nombre_evento }}
+                </div>
+                <div class="col-md-4">
+                    <label for="">Fecha y hora:</label>
+                    {{ form.fecha_hora }}
+                    </div>
+                </div>
+            </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">Escenario</label>
+            {{ form.escenario }}
+        </div>
+        <div class="col-md-6">
+            <label for="">Presentación:</label>
+            {{ form.presentacion }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label for="">Capacidad:</label>
+            {{ form.capacidad_evento }}
+        </div>
+        <div class="col-md-4">
+            <label for="">Tipo de evento:</label>
+            {{ form.tipo_evento }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">Objetivo:</label>
+            {{ form.objetivo }}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="">¿Publicar en medios?:</label>
+            {{ form.publicar_medios }}
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Publicar en sitio web?:</label>
+            {{ form.publicar_sito_web }}
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Publicar en redes sociales?:</label>
+            {{ form.publicar_social_media }}
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Transmitir en vivo?:</label>
+            {{ form.facebook_live }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <label for="">¿Música de ambiente?:</label>
+            {{ form.musica_ambiente }}
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Requiere laptop?:</label>
+            {{ form.laptop }}
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Requiere microfono?:</label>
+            {{ form.microfonos }}
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Internet?:</label>
+            {{ form.internet }}
+        </div>
+    </div>
+    <br>
+
+    <button class="btn btn-lg btn-success"> Actualizar</button>
+
+    </form>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            var initial_date_time = $('#id_fecha_hora').val();
+            console.log(initial_date_time);
+            $('#dt').val("dde");
+            $('#id_fecha_hora').datetimepicker({
+                format: 'YYYY-MM-DD hh:mm'
+            });
+        });
+    </script>
+{% endblock %}

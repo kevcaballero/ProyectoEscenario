@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Listar eventos {% endblock %}
+
+{% block content %}
+    <h2> Detalles del evento </h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">Nombre del evento:</label>
+            <input type="text" value="{{ e.nombre_evento }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-4">
+            <label for="">Fecha y hora:</label>
+            <input type="text" value="{{ e.fecha_hora }}" class="form-control" disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label for="">Escenario</label>
+            <input type="text" value="{{ e.escenario }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="">Presentación:</label>
+            <input type="text" value="{{ e.presentacion }}" class="form-control" disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <label for="">Capacidad:</label>
+            <input type="text" value="{{ e.capacidad_evento }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-4">
+            <label for="">Tipo de evento:</label>
+            <input type="text" value="{{ e.get_tipo_evento_display }}" class="form-control" disabled>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <label for="">Objetivo:</label>
+            <textarea rows="4" cols="50" class="form-control" disabled>
+                {{ e.objetivo }}
+            </textarea>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <label for="">¿Publicar en medios?:</label>
+            <input type="text" value="{{ e.publicar_medios }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Publicar en sitio web?:</label>
+            <input type="text" value="{{ e.publicar_sito_web }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Publicar en redes sociales?:</label>
+            <input type="text" value="{{ e.publicar_social_media }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Transmitir en vivo?:</label>
+            <input type="text" value="{{ e.facebook_live }}" class="form-control" disabled>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <label for="">¿Música de ambiente?:</label>
+            <input type="text" value="{{ e.musica_ambiente }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Requiere laptop?:</label>
+            <input type="text" value="{{ e.laptop }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Requiere microfono?:</label>
+            <input type="text" value="{{ e.microfonos }}" class="form-control" disabled>
+        </div>
+        <div class="col-md-3">
+            <label for="">¿Internet?:</label>
+            <input type="text" value="{{ e.internet }}" class="form-control" disabled>
+        </div>
+    </div>
+    <br>
+    <a href="{% url 'reserva:listar_eventos' %}">
+        <button class="btn bg-primary" style="cursor: pointer;"> Regresar </button>
+    </a>
+{% endblock %}

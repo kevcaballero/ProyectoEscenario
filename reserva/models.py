@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -18,83 +19,93 @@ class Escenario(models.Model):
     )
 
     nombre_escenario = models.CharField(max_length=200)
-    tipo_escenario=models.CharField(max_length=1, choices=TIPO_ESCENARIO, default='Default Value')
-    ubicacion= models.CharField(max_length=250)
-    estado=models.CharField(max_length=1, choices=ESTADO_ESCENARIO, default=ESTADO_ESCENARIO[1][1])
-    imagen = models.ImageField(upload_to='img/escenarios', blank=True, null=True)
+    tipo_escenario = models.CharField(max_length=1, choices=TIPO_ESCENARIO, default='Default Value')
+    ubicacion = models.CharField(max_length=250)
+    estado = models.CharField(max_length=1, choices=ESTADO_ESCENARIO, default=ESTADO_ESCENARIO[1][1])
+    imagen = models.ImageField(upload_to='escenarios', blank=True, null=True)
 
     def __str__(self):
         return self.nombre_escenario
 
 
-class ImgEscenario(models.Model):
-    presentacion = models.ImageField(upload_to='escenarios',default=' Default Value')#falta algo
-    escenario = models.ForeignKey(Escenario)
+class PresentacionEscenario(models.Model):
+    nombre = models.CharField("Nombre de la presentacion", max_length=100)
+    presentacion = models.ImageField(upload_to='presentacion')
+    # escenario = models.CharField("Tmp", max_length=100)
 
-    def __unicode__(self):
-        return self.presentacion
+    def __str__(self):
+        return self.nombre
+
 
 class Evento(models.Model):
-
-    Academico='A'
-    Deportivo='D'
-    Cultural='CRA'
-    Civico='C'
-    Recreativo= 'R'
-    Capacitacion='CAP'
+    Academico = 'A'
+    Deportivo = 'D'
+    Cultural = 'CRA'
+    Civico = 'C'
+    Recreativo = 'R'
+    Capacitacion = 'CAP'
 
     TIPO_EVENTO = (
-        ('A' ,'Academico'),
+        ('A', 'Academico'),
         ('D', 'Deportivo'),
-        ('CRA','Cultural'),
-        ('C' ,'Civico'),
-        ('R' ,'Recreativo'),
-        ('CAP','Capacitacion')
+        ('CRA', 'Cultural'),
+        ('C', 'Civico'),
+        ('R', 'Recreativo'),
+        ('CAP', 'Capacitacion')
+    )
+
+    OPTIONS_CHOICES = (
+        ('SI', 'SI'),
+        ('NO', 'NO')
     )
 
     nombre_evento = models.CharField(max_length=200)
-    capacidad_evento = models.IntegerField(null=True)
-    tipo_evento = models.CharField(max_length=3, choices=TIPO_EVENTO)
-    objetivo = models.TextField()
-    fecha = models.DateField()
-    hora = models.DateTimeField()
-    medio_difusion = models.FileField()
-    req_internet = models.BooleanField()
-    img = models.ForeignKey(ImgEscenario, blank=True, null=True)
+    fecha_hora = models.DateTimeField("Fecha y hora del evento")
     escenario = models.ForeignKey(Escenario)
-    #organizador=models.ForeignKey(User)#Falta hacer algo
+    presentacion = models.ForeignKey(PresentacionEscenario)
+    capacidad_evento = models.IntegerField("Capacidad del evento", null=True)
+    tipo_evento = models.CharField(max_length=3, choices=TIPO_EVENTO)
+    objetivo = models.TextField("Objetivo")
+    publicar_medios = models.CharField("Publicar en medios?", max_length=2, choices=OPTIONS_CHOICES)
+    publicar_sito_web = models.CharField("Publicar en sitio web?", max_length=2, choices=OPTIONS_CHOICES)
+    publicar_social_media = models.CharField("Publicar en redes sociales?", max_length=2, choices=OPTIONS_CHOICES)
+    facebook_live = models.CharField("Transmitir en tiempo real (Facebook live)?", max_length=2,
+                                     choices=OPTIONS_CHOICES)
+    musica_ambiente = models.CharField("Música de ambiente?", max_length=2, choices=OPTIONS_CHOICES)
+    laptop = models.CharField("Requiere laptop?", max_length=2, choices=OPTIONS_CHOICES)
+    microfonos = models.CharField("Requiere microfonos?", max_length=2, choices=OPTIONS_CHOICES)
+    internet = models.CharField(max_length=2, choices=OPTIONS_CHOICES)
+    user = models.ForeignKey(User)
 
-
-    def __unicode__(self):
+    def __str__(self):
         return self.nombre_evento
 
 
-class Recurso(models.Model):
-    DISPONIBILIDAD_EQUIPO = (
-        ('P', 'Propio'),
-        ('I', 'Institucion'),
+# class Recurso(models.Model):
+#     DISPONIBILIDAD_EQUIPO = (
+#         ('P', 'Propio'),
+#         ('I', 'Institucion'),
+#
+#     )
+#     TIPO_EQUIPO = (
+#         ('L', 'Laptop'),
+#         ('M', 'MacBook'),
+#
+#     )
+#     TIPO_EQUIPOAUDIO = (
+#         ('M', 'Microfono'),
+#         ('B', 'Bocina'),
+#
+#     )
+#     disponibilidad_equipo = models.CharField(max_length=1, choices=DISPONIBILIDAD_EQUIPO, default='Default Value')
+#     tipo_equipo = models.CharField(max_length=1, choices=TIPO_EQUIPO, default='Default Value')
+#     tipo_equipoAudio = models.CharField(max_length=1, choices=TIPO_EQUIPOAUDIO, default='Default Value')
 
-    )
-    TIPO_EQUIPO = (
-        ('L', 'Laptop'),
-        ('M', 'MacBook'),
 
-    )
-    TIPO_EQUIPOAUDIO = (
-        ('M', 'Microfono'),
-        ('B', 'Bocina'),
-
-    )
-    disponibilidad_equipo =models.CharField(max_length=1,choices=DISPONIBILIDAD_EQUIPO, default='Default Value')
-    tipo_equipo=models.CharField(max_length=1, choices=TIPO_EQUIPO,default='Default Value')
-    tipo_equipoAudio=models.CharField(max_length=1, choices=TIPO_EQUIPOAUDIO,default='Default Value')
-
-
-        # Retroalimentacion del Evento
 class Comentario(models.Model):
-        #user = models.ForeignKey(User) #Falta hacer algo
-        evento =models.ForeignKey(Evento)
-        contenido= models.TextField()
+    # user = models.ForeignKey(User) #Falta hacer algo
+    evento = models.ForeignKey(Evento)
+    contenido = models.TextField()
 
-        def _unicode_(self):
-            return " $% $%" %(self.user.username, self.evento.nombre_evento)
+    def _unicode_(self):
+        return " $% $%" % (self.user.username, self.evento.nombre_evento)

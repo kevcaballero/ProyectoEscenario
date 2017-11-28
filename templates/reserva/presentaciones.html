@@ -17,7 +17,7 @@
     
     <div class="row">
         <a href="{% url 'reserva:agregarPresentacion' %}">[
-            <i class="fa fa-plus" aria-hidden="true"></i>] Agregar Presenracion</a>
+            <i class="fa fa-plus" aria-hidden="true"></i>] Agregar presentación</a>
     </div>
 
     <div class="row">
@@ -31,10 +31,10 @@
                     </div>
                     <div>
                             
-                        <a href="{% url 'reserva:actualizarPresentacion' img_escenario.id %}">
-                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar escenario</a>
+                        <a href="{% url 'reserva:actualizarPresentacion' img_escenario.pk %}">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar presentación</a>
                         <a href="{% url 'reserva:eliminarPresentacion' img_escenario.id %}" class="">
-                            <i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar escenario</a>
+                            <i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar presentación</a>
                     </div>
                     
             </div>

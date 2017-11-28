@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Listar eventos {% endblock %}
+
+{% block content %}
+    <div class="">
+    <h2> Listas eventos </h2>
+    <a href="">[+] Agregar nuevo evento</a>
+
+    <table class="table table-striped table-responsive">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del evento</th>
+            <th>Fecha y hora</th>
+            <th>Escenario</th>
+            <th>Tipo de evento </th>
+            <th>Organizador</th>
+            <th>Detalles</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for evento in eventos %}
+            <tr>
+                <th scope="row">{{ evento.id }}</th>
+                <td>{{ evento.nombre_evento }}</td>
+                <td>{{ evento.fecha_hora }}</td>
+                <td>{{ evento.escenario }}</td>
+                <td>{{ evento.get_tipo_evento_display }}</td>
+                <td>{{ evento.user }}</td>
+                <td>
+                    <a href="{% url 'reserva:detalle_evento' evento.pk %}"> Ver </a> |
+                    <a href="{% url 'reserva:update_evento'  evento.pk %}">Editar </a>
+                </td>
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+    </div>
+
+{% endblock content %}
